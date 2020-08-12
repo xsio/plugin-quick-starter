@@ -1,0 +1,165 @@
+---
+grails:
+  profile: web
+  codegen:
+    defaultPackage: sample
+  spring:
+    transactionManagement:
+      proxies: false
+  gorm:
+    failOnError: true
+    multiTenancy:
+      mode: DISCRIMINATOR
+info:
+  app:
+    name: '@info.app.name@'
+    version: '@info.app.version@'
+    grailsVersion: '@info.app.grailsVersion@'
+spring:
+  main:
+    banner-mode: "off"
+  groovy:
+    template:
+      check-template-location: false
+logging:
+  level:
+    org:
+      hibernate: ERROR
+
+service:
+  unit:
+    enable: ${service_unit_enable:true}
+    key:
+
+---
+grails:
+  mime:
+    disable:
+      accept:
+        header:
+          userAgents:
+            - Gecko
+            - WebKit
+            - Presto
+            - Trident
+    types:
+      all: '*/*'
+      atom: application/atom+xml
+      css: text/css
+      csv: text/csv
+      form: application/x-www-form-urlencoded
+      html:
+        - text/html
+        - application/xhtml+xml
+      js: text/javascript
+      json:
+        - application/json
+        - text/json
+      multipartForm: multipart/form-data
+      rss: application/rss+xml
+      text: text/plain
+      hal:
+        - application/hal+json
+        - application/hal+xml
+      xml:
+        - text/xml
+        - application/xml
+  urlmapping:
+    cache:
+      maxsize: 1000
+  controllers:
+    defaultScope: singleton
+  converters:
+    encoding: UTF-8
+  plugin:
+    databasemigration:
+      updateOnStart: true
+      updateOnStartFileName: changelog.groovy
+
+  gorm:
+    failOnError: true
+  hibernate:
+    cache:
+      queries: false
+  resources:
+    pattern: '/**'
+
+server:
+  port: 29004
+
+---
+timeInterval:
+  single_sms_job: 5 #单位分钟
+  single_send_sms_job: 10 #单位分钟
+  short_chain_click_report_job: 1
+  report_job: 2 #单位分钟
+  unsubscribe_job: 10 #单位时间  退订
+
+redis:
+  host: 127.0.0.1
+  password:
+  port: 6379
+  poolConfig:
+    maxIdle: 10
+
+suRedis:
+  host: 127.0.0.1
+  password:
+  port: 6379
+
+rabbitServer:
+  host: 127.0.0.1
+  username: guest
+  password: guest
+  thread:
+    nums: 10
+
+kafkaServer:
+  bootstrap:
+    servers: localhost:9092
+---
+
+kafka:
+  sampleTopic:
+    topic: "sample_topics"
+    groupId: "sample_group"
+    numConsumers: 10
+---
+apiServer:
+  serverUrl: ${api_internal_url:https://api.dmhub.cn}
+app:
+    serverUrl: ${app_public_url:https://app.dmhub.cn}
+internalService:
+    serverUrl: ${internalapi_internal_url:http://internalapi.dmhub.cn}
+---
+oauth:
+    clientId: ${oauth_client_id:ocl0014170819aa22e}
+    clientSecret: ${oauth_client_secret:88837b8ead96013360c8682159a10fe7d730fa3d}
+
+---
+dataSource:
+  pooled: true
+  jmxExport: true
+  driverClassName: com.mysql.jdbc.Driver
+  username: root
+  password: root
+  dbCreate: none
+  url: jdbc:mysql://localhost:3306/sample?useUnicode=yes&characterEncoding=UTF-8&useLegacyDatetimeCode=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull
+  properties:
+    jmxEnabled: true
+    initialSize: 5
+    maxActive: 50
+    minIdle: 5
+    maxIdle: 25
+    maxWait: 10000
+    maxAge: 600000
+    timeBetweenEvictionRunsMillis: 5000
+    minEvictableIdleTimeMillis: 60000
+    validationQuery: SELECT 1
+    validationQueryTimeout: 3
+    validationInterval: 15000
+    testOnBorrow: true
+    testWhileIdle: true
+    testOnReturn: false
+    jdbcInterceptors: ConnectionState
+    defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED

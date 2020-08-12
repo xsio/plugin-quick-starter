@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./node_modules/@convertlab/ui_shell/css/ant.css" rel="stylesheet">
+    <link rel="stylesheet" href="./node_modules/@convertlab/ui_shell/css/clicon.css">
+
+    <% for(var css of htmlWebpackPlugin.options.css) { %>
+    <link rel="stylesheet" href="<%= css %>">
+    <% } %>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/react/umd/react.production.min.js"></script>
+    <script src="./node_modules/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="./node_modules/react-router/umd/ReactRouter.min.js"></script>
+    <script src="./node_modules/redux/dist/redux.min.js"></script>
+    <script src="./node_modules/react-redux/dist/react-redux.min.js"></script>
+    <script src="./node_modules/echarts/dist/echarts.min.js?4.2.1"></script>
+    <script src="./node_modules/moment/min/moment.min.js"></script>
+    <script src="./node_modules/moment/locale/zh-cn.js"></script>
+    <script src="./node_modules/antd/dist/antd.min.js"></script>
+    <script src="./node_modules/lodash/lodash.min.js"></script>
+    <script src="./node_modules/convertlab-uilib/lib/index.js?<%= htmlWebpackPlugin.options.uilibVersion %>"></script>
+    <script src="./node_modules/convertlab-ui-common/lib/index.js?<%= htmlWebpackPlugin.options.uiCommonVersion %>"></script>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <% for(var plugin of htmlWebpackPlugin.options.plugin) { %>
+    <script src="<%= plugin %>"></script>
+    <% } %>
+</head>
+<body>
+    <%= htmlWebpackPlugin.options.dom %>
+    <div id="content"></div>
+    <div id="dialog"></div>
+</body>
+
+</html>

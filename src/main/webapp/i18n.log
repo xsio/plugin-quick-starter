@@ -1,0 +1,74 @@
+### start src/index.js ###
+
+### end src/index.js ###
+
+### start dependencies.js ###
+
+### end dependencies.js ###
+
+### start src/TemplateList.js ###
+新建
+名称
+类型
+通知类
+营销类
+状态
+草稿
+通过
+预览
+<> 预览<>
+ 预览
+创建时间
+创建人
+操作
+删除
+确定要删除吗?
+编辑
+复制
+<>插件项目快速开始模板<>
+<>请参考开发文档<>
+请参考开发文档
+<>帮助<>
+<> {} 预览 <>
+<>确定<>
+确定
+<>内容预览<>
+内容预览
+项目模板
+搜索内容
+共 {} 个, 第 {}-{} 个
+### end src/TemplateList.js ###
+
+### start src/components/LeftMenu.js ###
+
+### end src/components/LeftMenu.js ###
+
+### start src/components/GroupMenu.js ###
+群组
+微页面
+短消息
+邮件
+自动流
+微信模版消息
+推广活动
+营销活动
+微信卡券
+抽奖活动
+未分组
+搜索分组
+<> 移到分组{} <>
+移到分组
+正在加载{}，请稍后...
+数据
+分组不为空
+### end src/components/GroupMenu.js ###
+
+### start src/services/list.js ###
+
+### end src/services/list.js ###
+
+### start src/constants/index.js ###
+列表
+发送报告
+### end src/constants/index.js ###
+

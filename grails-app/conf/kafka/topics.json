@@ -1,0 +1,9 @@
+[
+  {
+    "name": "sample_topics",
+    "consumerServices": [
+      "sample"
+    ],
+    "partitions": 20
+  }
+]
