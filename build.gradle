@@ -164,6 +164,8 @@ bootRun {
 war {
     baseName = "sample"
     version = "latest"
+    exclude ("node_modules/**")
+    exclude ("src/**")
 }
 
 task wrapper(type: Wrapper) {
