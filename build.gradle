@@ -32,8 +32,6 @@ repositories {
     maven {
         name "public"
         credentials {
-            username "dev"
-            password "dev&123"
 //            username mavenUser
 //            password mavenPassword
         }
@@ -42,8 +40,6 @@ repositories {
     maven {
         name "public"
         credentials {
-            username "cddev"
-            password "clab1234"
 //            username mavenUser
 //            password mavenPassword
         }
